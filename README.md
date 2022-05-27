@@ -46,7 +46,7 @@ To run the application execute app.py
   python app.py
 ```
 
-## Documentation
+## Demo
 
 * [Documentation](https://drive.google.com/file/d/1Plv6hl9J_NYnsVLFQqnaSEAFlhZNucZU/view?usp=sharing)
 * [Demo Video](https://youtu.be/pRTdgs3u42M)
