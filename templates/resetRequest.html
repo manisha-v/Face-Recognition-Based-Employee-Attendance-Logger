@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <title>Face Recognition Based Employee Attendance Logger</title>
+  <link rel="icon" type="image/x-icon" href="static/icon3.png">
+
+</head>
+<style>
+  section {
+    background-image: url('static/bg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+  }
+</style>
+
+<body>
+  <section class="vh-100">
+    <div class="container py-5 h-auto">
+      <center>
+        <div>
+          <div class="row d-flex justify-content-center align-items-center h-auto w-50">
+            <h2>Forgot your password?</h2>
+            <p>Change your password in three easy steps. This will help you to secure your password!</p>
+            <ol class="list-unstyled">
+              <li><span class="text-primary text-medium">1. </span>Enter your email address below.</li>
+              <li><span class="text-primary text-medium">2. </span>Our system will send you an OTP</li>
+              <li><span class="text-primary text-medium">3. </span>Use that to reset your password</li>
+            </ol>
+            <div class="card" style="border-radius: 1rem;">
+              <div class="row g-0">
+                <div class="card-body p-4 p-lg-5 text-black">
+                  <div class="form-section"></div>
+                  <form method="post" action="/reset_request">
+                    <div class="d-flex align-items-center mb-3 pb-1">
+                      <h2>Let's Reset the password</h2>
+                    </div>
+                    {% if incorrect == True %}
+                    <p style="color:red"> <b></b>No user found with given mail id</b> </p>
+                    {% endif %}
+
+                    <div class="card-body">
+                      <div class="form-group">
+                        <label for="email-for-pass">Enter your email address</label>
+                        <input class="form-control" type="mail" id="email-for-pass" name="mail" required=""><small
+                          class="form-text text-muted">Enter the email address you used during the registration. Then
+                          we'll email an OTP to this address.</small>
+                      </div>
+                    </div>
+
+                    <div class="pt-1 mb-4">
+                      <button type="submit" class="btn btn-dark btn-lg btn-block" type="button">Get OTP</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </center>
+    </div>
+  </section>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+</body>
+
+</html>

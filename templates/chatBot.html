@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Face Recognition Based Employee Security System</title>
+    <link rel="icon" type="image/x-icon" href="static/icon3.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='chatbot.css')}}">
+</head>
+
+<body>
+    
+
+    <!-- partial:index.partial.html -->
+    <section class="msger">
+        <header class="msger-header">
+            <div class="msger-header-title">
+                <i class="fas fa-robot"></i>User Guide Chatbot
+                <i class="fas fa-robot"></i>
+            </div>
+        </header>
+
+        <main class="msger-chat">
+            <div class="msg left-msg">
+                <div class="msg-img" style="background-image: url('static/bot2.png')"></div>
+
+                <div class="msg-bubble">
+                    <div class="msg-info">
+                        <div class="msg-info-name">Chatbot</div>
+                        <!-- <div class="msg-info-time">12:45</div> -->
+                    </div>
+
+                    <div class="msg-text">
+                        Hi, welcome to User guide ChatBot! Go ahead and ask your question. 😄
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <form class="msger-inputarea" autocomplete="off">
+            <!-- <input type="text" class="msger-input" id="textInput" placeholder="Enter your message..."> -->
+
+            <datalist id="mylist">
+                {% for key in keys %}
+                    <option value='{{key}}'></option>   
+                {% endfor %}
+            </datalist>
+            <input type="text" class="msger-input" id="textInput" placeholder="Ask your question" list="mylist">
+            <button type="submit" class="msger-send-btn">Send</button>
+        </form>
+    </section>
+    <!-- partial -->
+    <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
+    <script>
+        const msgerForm = get(".msger-inputarea");
+        const msgerInput = get(".msger-input");
+        const msgerChat = get(".msger-chat");
+
+        const BOT_IMG = 'static/bot2.png';
+        const PERSON_IMG = 'static/user.png';
+        const BOT_NAME = "    ChatBot";
+        const PERSON_NAME = "You";
+
+        msgerForm.addEventListener("submit", event => {
+            event.preventDefault();
+
+            const msgText = msgerInput.value;
+            if (!msgText) return;
+
+            appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
+            msgerInput.value = "";
+            botResponse(msgText);
+        });
+
+        function appendMessage(name, img, side, text) {
+            //   Simple solution for small apps
+            const msgHTML = `
+<div class="msg ${side}-msg">
+  <div class="msg-img" style="background-image: url(${img})"></div>
+
+  <div class="msg-bubble">
+    <div class="msg-info">
+      <div class="msg-info-name">${name}</div>
+      <div class="msg-info-time">${formatDate(new Date())}</div>
+    </div>
+
+    <div class="msg-text">${text}</div>
+  </div>
+</div>
+`;
+
+            msgerChat.insertAdjacentHTML("beforeend", msgHTML);
+            msgerChat.scrollTop += 500;
+        }
+
+        function botResponse(rawText) {
+
+            // Bot Response
+            $.get("/get", { msg: rawText }).done(function (data) {
+                console.log(rawText);
+                console.log(data);
+                const msgText = data;
+                appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
+
+            });
+
+        }
+
+        // Utils
+        function get(selector, root = document) {
+            return root.querySelector(selector);
+        }
+
+        function formatDate(date) {
+            const h = "0" + date.getHours();
+            const m = "0" + date.getMinutes();
+
+            return `${h.slice(-2)}:${m.slice(-2)}`;
+        }
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

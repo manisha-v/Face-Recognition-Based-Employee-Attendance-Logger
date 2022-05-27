@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
+
+body {
+  background-image: url('bg6.gif');
+  background-repeat: repeat;
+  background-size: contain;
+  background-attachment: fixed;
+  align-self: right;
+}
+
+.myBtn {
+  width: 30%;
+  font-size: large;
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+.myBtn:hover {
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+  font-size: larger;
+  font-weight: bold;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.links {
+  position: fixed;
+  width: 70px;
+  margin-top: 25vh;
+  transition: all 0.3s linear;
+  box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, .4);
+}
+
+.links li {
+  height: 60px;
+  position: relative;
+}
+
+.links li a {
+  color: white;
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 60px;
+  padding-left: 25%;
+  border-bottom: 1px solid rgba(0, 0, 0, .4);
+  transition: all .3s linear;
+}
+
+.links li a i {
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  font-size: 27px;
+}
+
+ul li a span {
+  display: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+a.link:hover {
+  z-index: 1;
+  width: 200px;
+  border-bottom: 1px solid rgba(0, 0, 0, .5);
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
+}
+
+ul li:hover a span {
+  padding-left: 30%;
+  display: block;
+}
+.log{
+  color: white;
+}
+.log:hover{
+  color: blue;
+  text-decoration: none;
+}
