@@ -1,1 +1,59 @@
 # Face-Recognition-Based-Employee-Attendance-Logger
+
+This project is a web application demonstrating the use of facial recognition for marking attendance. It can be used by the company to manage attendance of its employees and generate attendance report/stats. It Reduces manual process errors by providing automated and a reliable attendance system that uses face recognition technology.
+
+## Tech Stack
+- Python
+- Flask Framework
+- HTML
+- CSS
+- JavaScript
+- SQLite
+
+## Built Using
+
+ - [OpenCV]() - Open Source Computer Vision and Machine Learning software library
+ - [Dlib]() - C++ Library containing Machine Learning Algorithms
+ - [face_recognition]() - by Adam Geitgey
+ - [deepface]() - a lightweight facial attribute analysis framework for python
+ - [Flask]() - Python framework for web development
+
+Note: Python version 3.8.13 was used for this project. And the dlib package required for installation of face_recognition api is also uploaded.
+
+
+## How to run?
+
+First Download or Clone the Project on Your Local Machine.
+
+To download the project from github press Download Zip
+
+cd to the directory where root file is located
+
+Create a virtual environment
+```bash
+  conda create -n python=3.8 {env_name} pip
+```
+activate that virtual environment
+```bash
+  conda activate {env_name}
+```
+install all the dependencies
+```bash
+  pip install -r requirements.txt
+```
+To run the application execute app.py    
+```bash
+  python app.py
+```
+
+## Documentation
+
+* [Documentation](https://drive.google.com/file/d/1Plv6hl9J_NYnsVLFQqnaSEAFlhZNucZU/view?usp=sharing)
+* [Demo Video](https://youtu.be/pRTdgs3u42M)
+
+## Scope of the project 
+
+Facial recognition is becoming more prominent in our society. It has made major progress in the field of security. COVID-19 has been one of the greatest accelerators of facial recognition technology with the adoption by companies throughout the world as a method of reducing the contact points for customers and staff.  Face recognition is one of the newer developments of biometric identifiers that doesn’t require as much time or intrude on the person its verifying. Other biometric identifiers, such as fingerprint scanners and voice recognition, requires many different pieces in order to function. This project serves as a foundation for future projects based on facial detection and recognition. This project also convers web development and database management with a user-friendly UI. Using this system any corporate offices, school and organization can replace their traditional way of maintaining attendance of the employees and can also generate their attendance reports. 
+
+## Need any help?
+##### Connect me on [LinkedIn](https://www.linkedin.com/in/manisha-varshney-914646191/)  <img src="https://cdn.iconscout.com/icon/free/png-256/linkedin-162-498418.png" width="25"> 
