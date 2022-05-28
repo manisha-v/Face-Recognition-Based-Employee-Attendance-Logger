@@ -12,11 +12,12 @@ This project is a web application demonstrating the use of facial recognition fo
 
 ## Built Using
 
- - [OpenCV]() - Open Source Computer Vision and Machine Learning software library
- - [Dlib]() - C++ Library containing Machine Learning Algorithms
- - [face_recognition]() - by Adam Geitgey
- - [deepface]() - a lightweight facial attribute analysis framework for python
- - [Flask]() - Python framework for web development
+ - [OpenCV](https://github.com/davisking/dlib) - Open Source Computer Vision and Machine Learning software library
+ - [Dlib](https://github.com/davisking/dlib) - C++ Library containing Machine Learning Algorithms
+ - [face_recognition](https://github.com/ageitgey/face_recognition) - by Adam Geitgey
+ - [deepface](https://github.com/davisking/dlib) - a lightweight facial attribute analysis framework for python
+ - [Flask](https://github.com/davisking/dlib) - Python framework for web development
+ - SQLite database
 
 Note: Python version 3.8.13 was used for this project. And the dlib package required for installation of face_recognition api is also uploaded.
 
