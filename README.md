@@ -19,7 +19,7 @@ This project is a web application demonstrating the use of facial recognition fo
  - [Flask](https://github.com/davisking/dlib) - Python framework for web development
  - SQLite database
 
-Note: Python version 3.8.13 was used for this project. And the dlib package required for installation of face_recognition api is also uploaded.
+Note: Python version 3.8.13 was used for this project.
 
 
 ## How to run?
