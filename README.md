@@ -24,23 +24,17 @@ Note: Python version 3.8.13 was used for this project. And the dlib package requ
 
 ## How to run?
 
-First Download or Clone the Project on Your Local Machine.
-
-To download the project from github press Download Zip
+First Download Zip or Clone the Project on Your Local Machine.
 
 cd to the directory where root file is located
 
-Create a virtual environment
+Create a virtual environment with all the dependencies
 ```bash
-  conda create -n python=3.8 {env_name} pip
+  conda env create -f msenv.yml
 ```
 activate that virtual environment
 ```bash
-  conda activate {env_name}
-```
-install all the dependencies
-```bash
-  pip install -r requirements.txt
+  conda activate msenv
 ```
 To run the application execute app.py    
 ```bash
